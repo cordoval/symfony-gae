@@ -1,0 +1,18 @@
+application: devfest-cordoval
+version: 5
+runtime: php
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /bundles
+  static_dir: web/bundles
+
+- url: /app_dev\.php.*
+  script: web/app_dev.php
+
+- url: .*
+  script: web/app.php
+
+env_variables:
+  SYMFONY_ENV: 'dev'
