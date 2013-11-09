@@ -17,9 +17,25 @@ framework:
         #assets_version: SomeVersionScheme
     default_locale:  "%locale%"
     trusted_proxies: ~
-    session:         ~
     fragments:       ~
     http_method_override: true
+
+    session:
+#        storage_id:           session.storage.native
+        handler_id:           session.handler.memcache
+#        name:                 ~
+#        cookie_lifetime:      ~
+#        cookie_path:          ~
+#        cookie_domain:        ~
+#        cookie_secure:        ~
+#        cookie_httponly:      ~
+#        gc_divisor:           ~
+#        gc_probability:       ~
+#        gc_maxlifetime:       ~
+#        save_path:            '%kernel.cache_dir%/sessions'
+
+        # seconds to wait between 2 session metadata updates, it will also prevent the session handler to write if the session has not changed
+        metadata_update_threshold:  0
 
 # Twig Configuration
 twig:

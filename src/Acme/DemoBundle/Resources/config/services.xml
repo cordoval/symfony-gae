@@ -14,5 +14,11 @@
             <tag name="kernel.event_listener" event="kernel.controller" method="onKernelController" />
             <argument type="service" id="twig.extension.acme.demo" />
         </service>
+
+        <service id="session.memcache" class="Memcache" />
+        <service id="session.handler.memcache" class="Symfony\Component\HttpFoundation\Session\Storage\Handler\MemcacheSessionHandler">
+            <argument type="service" id="session.memcache" />
+            <argument>%session.storage.options%</argument>
+        </service>
     </services>
 </container>
