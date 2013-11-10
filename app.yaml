@@ -1,8 +1,7 @@
 application: devfest-cordoval
-version: 5
+version: 7
 runtime: php
 api_version: 1
-threadsafe: true
 
 handlers:
 - url: /bundles
@@ -15,4 +14,4 @@ handlers:
   script: web/app.php
 
 env_variables:
-  SYMFONY_ENV: 'dev'
+  DISABLE_FUNCTIONS: true
